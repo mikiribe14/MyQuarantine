@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "105104132672",
+    "firebase_url": "https://myquarantine-18bed.firebaseio.com",
+    "project_id": "myquarantine-18bed",
+    "storage_bucket": "myquarantine-18bed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105104132672:android:62baaf9d176a30e1d36da5",
+        "android_client_info": {
+          "package_name": "com.example.myquarantine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105104132672-9uu7enr33m0a0ufakudedd10vhjli4ot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myquarantine",
+            "certificate_hash": "b921908d02e1ec2617f86fc445c6f59b2ce4c0b9"
+          }
+        },
+        {
+          "client_id": "105104132672-nbb01s3ga3qt73m6no8ui1sb813u55lr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7zYbM_StdJsbOJ591ET3igyyh0buGXFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105104132672-nbb01s3ga3qt73m6no8ui1sb813u55lr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

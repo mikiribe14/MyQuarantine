@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#61bd4f</color>
+    <color name="colorPrimaryDark">#111111</color>
+    <color name="colorAccent">#17b50e</color>
+
+
+    <!--
+    <color name="background">#dbadec</color>  <- note colour
+    <color name="note_selected">#cfb148</color>
+    <color name="note_important">#8f42ad</color>-->
+
+    <color name="background">#faac9d</color>
+    <color name="note_selected">#d18777</color>
+
+    <color name="note_important">#fa7257</color>
+
+    <color name="settingsItemBackground">#d6ecd2</color>
+    <color name="settingsItemSelected">#c9edc2</color>
+
+    <color name="settingsBackground">#d6ecd2</color>
+
+    <color name="LightBackground">#d6ecd2</color>
+
+
+    <color name="textBox">#fabeb4</color>
+    <color name="black">#444444</color>
+    <color name="white">#ffffff</color>
+
+
+
+    <!--  world  -->
+    <color name="headWorldLayout">#6dd174</color>
+    <color name="footWorldLayout">#519839</color>
+
+
+</resources>
