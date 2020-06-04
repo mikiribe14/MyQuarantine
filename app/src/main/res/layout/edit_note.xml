@@ -139,7 +139,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:background="@color/textBox"
         android:orientation="horizontal"
         app:layout_constrainedWidth="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -151,18 +150,17 @@
 
         <Button
             android:id="@+id/audioButton"
-            android:layout_width="0dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:background="@android:drawable/presence_audio_busy" />
 
         <TextView
             android:id="@+id/audioText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Add you self voice note"
-            android:textAlignment="center"
+            android:text="Add your voice note"
+            android:gravity="center"
+            android:textAlignment="textStart"
             android:textSize="27dp"
             android:textStyle="bold" />
     </LinearLayout>

@@ -146,7 +146,7 @@ public class HomeActivity extends AppCompatActivity implements OnListItemClickLi
     public void checkIfUserSignedIn(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user!= null){
-            Toast.makeText(this, "Welcome back, " + user.getDisplayName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Welcome back, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
             username.setText(user.getDisplayName());
             mailname.setText(user.getEmail());
             setUpFirebaseDB();
@@ -320,7 +320,7 @@ public class HomeActivity extends AppCompatActivity implements OnListItemClickLi
                         if (note.getStoredInCloud()) { eraseFromCloud(note); }
                         homeViewModel.deleteNote(note.getId());
                         refreshNoteList();
-                        Toast.makeText(HomeActivity.this,"Note deleted",Toast.LENGTH_LONG).show();
+                        Toast.makeText(HomeActivity.this,"Note deleted",Toast.LENGTH_SHORT).show();
                         return true;
 
                     default:

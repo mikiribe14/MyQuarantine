@@ -32,6 +32,7 @@ public class EditNoteActivity extends AppCompatActivity {
     private EditText title;
     private EditText description;
     private ConstraintLayout layout;
+
     private Button startRecB;
     private Button stopRecB;
     private Button playRecB;
@@ -57,18 +58,20 @@ public class EditNoteActivity extends AppCompatActivity {
         editNoteViewModel = new ViewModelProvider(this).get(EditNoteViewModel.class);
 
         layout = findViewById(R.id.editNoteLayout);
+
         title = findViewById(R.id.titleField);
         description = findViewById(R.id.descriptionField);
         dayNumber = findViewById(R.id.dayNumber);
         audioText = findViewById(R.id.audioText);
 
-        daysSinceOutbreak = editNoteViewModel.getDaysSinceOutbreak();
-        if (daysSinceOutbreak != -1) {
-            dayNumber.setText(String.valueOf(daysSinceOutbreak));
-        }
-
         if (editingPreexistent = getIntent().hasExtra("id")){    //if editing a preexistent Note
             retrieveNoteData();
+        } else{
+            daysSinceOutbreak = editNoteViewModel.getDaysSinceOutbreak();
+        }
+
+        if (daysSinceOutbreak != -1) {
+            dayNumber.setText(String.valueOf(daysSinceOutbreak));
         }
 
         setUpAudioButtons();
@@ -97,11 +100,19 @@ public class EditNoteActivity extends AppCompatActivity {
                 title.setText(prevNote.getTitle());
                 description.setText(prevNote.getDescription());
                 audioPath = prevNote.getAudioPath();
+
+                daysSinceOutbreak = prevNote.getDaySinceOutbreak();
                 note=prevNote;
-                if(prevNote.hasAudio()){  playRecB.setVisibility(View.VISIBLE);  }
+                if(prevNote.hasAudio()){
+                    playRecB.setVisibility(View.VISIBLE);
+                    audioText.setText("Your audio");
+                }
                 if(note.getStoredInCloud()){
-                    int color = ContextCompat.getColor(getApplicationContext(), R.color.note_important);
-                    layout.setBackgroundColor(color);
+                    int backgroundColor = ContextCompat.getColor(getApplicationContext(), R.color.note_important);
+                    layout.setBackgroundColor(backgroundColor);
+                    int textBoxColor = ContextCompat.getColor(getApplicationContext(), R.color.important_textBox);
+                    title.setBackgroundColor(textBoxColor);
+                    description.setBackgroundColor(textBoxColor);
                 }
             }
         });
@@ -140,9 +151,9 @@ public class EditNoteActivity extends AppCompatActivity {
         switch (requestCode) {
             case (REQUEST_PERMISSION_CODE): {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
@@ -169,7 +180,7 @@ public class EditNoteActivity extends AppCompatActivity {
         boolean recordAudPerm = getPermission(Manifest.permission.RECORD_AUDIO);
 
         if(!extStorPerm || !recordAudPerm){
-            Toast.makeText(getApplicationContext(), "You don't have the permissions", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "You don't have the permissions", Toast.LENGTH_LONG).show();
             return false;
         }
 

@@ -111,7 +111,7 @@ public class SettingsActivity extends AppCompatActivity {
         deleteNoteBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(SettingsActivity.this,"Nothing deleted",Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this,"Nothing deleted",Toast.LENGTH_SHORT).show();
                 dialog.cancel();
             }
         });
@@ -134,7 +134,7 @@ public class SettingsActivity extends AppCompatActivity {
         signOutBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(SettingsActivity.this,"Sign out not completed",Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this,"Sign out not completed",Toast.LENGTH_SHORT).show();
                 dialog.cancel();
             }
         });
@@ -201,7 +201,7 @@ public class SettingsActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(SettingsActivity.this, "Sign out completed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SettingsActivity.this, "Sign out completed", Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -214,6 +214,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void deleteAllNotes (){
         settingsViewModel.deleteAllNotes();
-        Toast.makeText(this,"ALL NOTES DELETED",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"All notes deleted",Toast.LENGTH_LONG).show();
     }
 }
