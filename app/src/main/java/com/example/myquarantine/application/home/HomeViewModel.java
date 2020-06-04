@@ -33,4 +33,8 @@ public class HomeViewModel extends AndroidViewModel {
         repository.deleteNote(id);
     }
 
+    public void saveNote(int daySinceOutbreak, String title, String description, String audioPath){
+        repository.insert(new Note(daySinceOutbreak,title,description,audioPath));
+    }
+
 }

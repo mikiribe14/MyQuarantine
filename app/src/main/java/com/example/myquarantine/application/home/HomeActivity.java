@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity implements OnListItemClickLi
         setNoteListConfiguration();
 
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        //initialNotes();
         refreshNoteList();
 
         toolbar  = findViewById(R.id.toolbar);
@@ -72,6 +73,14 @@ public class HomeActivity extends AppCompatActivity implements OnListItemClickLi
         setUpDrawerLayout();
         setUpNavigationView();
         checkIfUserSignedIn();
+    }
+
+    public void initialNotes(){
+        homeViewModel.saveNote(30,"More coding","Coding all day :) ","");
+        homeViewModel.saveNote(32,"Take a walk","I finally could be outside!! ","");
+        homeViewModel.saveNote(34,"Back to work","Happily ending my 'vacations' ","");
+        homeViewModel.saveNote(25,"Coding","","");
+        homeViewModel.saveNote(2,"Buy WC paper","I really needed it, no panic","");
     }
 
     @Override
