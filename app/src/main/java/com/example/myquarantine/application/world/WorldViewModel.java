@@ -14,12 +14,10 @@ import java.util.HashMap;
 
 
 public class WorldViewModel extends AndroidViewModel {
-    private NoteRepository noteRepository;
     private CoronaRepository coronaRepository;
 
     public WorldViewModel(@NonNull Application application) {
         super(application);
-        noteRepository = NoteRepository.getInstance(application);
         coronaRepository = CoronaRepository.getInstance();
 
     }

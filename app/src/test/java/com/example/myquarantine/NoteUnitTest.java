@@ -13,8 +13,6 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class NoteUnitTest {
-    public EditNoteViewModel editNoteViewModel;
-
 
     @Test
     public void autoFillingTitle() {
@@ -28,20 +26,9 @@ public class NoteUnitTest {
     public void autoFillingDescription() {
         Note note = new Note(34,"title","");
         Note note2 = new Note(34,"","","audiopath");
-        assertEquals("Another boring day in this quarantine...",  note.getTitle());
-        assertEquals("Another boring day in this quarantine...",  note2.getTitle());
+        assertEquals("Another boring day in this quarantine...",  note.getDescription());
+        assertEquals("Another boring day in this quarantine...",  note2.getDescription());
     }
-
-
-    @Test
-    public void deletingNote() {
-
-
-
-
-    }
-
-
 
 
 }
